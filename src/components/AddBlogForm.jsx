@@ -16,7 +16,7 @@ function AddBlogForm() {
         formData.append('content', content);
         formData.append('imageFile', imageFile);
 
-        const response = await fetch("http://localhost:5000/blog", {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/blog`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`,

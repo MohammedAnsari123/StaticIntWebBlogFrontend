@@ -12,7 +12,7 @@ function EditBlogForm() {
     const [userId, setUserId] = useState(values.editingBlogData.userId)
 
     // const fetchBlog = async () => {
-    //     const response = await fetch(`http://localhost:5000/blog/${params.id}`)
+    //     const response = await fetch(`https://staticintwebblogbackend.onrender.com/blog/${params.id}`)
     //     const data = await response.json()
     //     setTitle(data.data.title)
     //     setContent(data.data.content)
@@ -22,7 +22,7 @@ function EditBlogForm() {
     // !title && !content && !userId && fetchBlog()
 
     const updateBlog = async () => {
-        const response = await fetch(`http://localhost:5000/blog/${values.editingBlogData._id}`, {
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/blog/${values.editingBlogData._id}`, {
             method: "PUT",
             headers: {
                 'Content-type': 'application/json'

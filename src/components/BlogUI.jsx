@@ -8,7 +8,7 @@ function Blogui(blog) {
 
     const handleDelete = async () => {
         try {
-            const response = await fetch(`http://localhost:5000/blog/${blog.blog._id}`, {
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}/blog/${blog.blog._id}`, {
                 method: "DELETE"
             });
             const data = await response.json();

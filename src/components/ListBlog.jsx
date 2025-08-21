@@ -14,7 +14,7 @@ function ListBlog() {
 
     const fetchBlogData = async () => {
         try {
-            const response = await fetch("http://localhost:5000/blog")
+            const response = await fetch(`${import.meta.env.VITE_BASE_URL}/blog`)
             if (!response.ok) {
                 throw new Error(`Request failed: ${response.status}`)
             }
